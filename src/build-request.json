@@ -1,0 +1,174 @@
+{
+  "kind": "build_request",
+  "title": "Rebuild Leisureflies site with chat functionality",
+  "projectName": "Leisureflies Travels",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add a live chat widget or chat tab that allows visitors to initiate customer communication directly from the website",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "enter the chat option tab as well"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible chat button or tab appears on all pages",
+        "Users can open the chat interface to send messages",
+        "Chat interface includes input field and send functionality",
+        "Chat state persists across page navigation"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement SEO optimization for the lead generation website including meta tags, structured data, Open Graph tags, and semantic HTML",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-previous-requirements"
+        ],
+        "quotes": [
+          "Good SEO should be there"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages include proper meta title and description tags",
+        "Open Graph and Twitter Card meta tags are present",
+        "Structured data (JSON-LD) for Organization and LocalBusiness is included",
+        "Semantic HTML5 elements are used appropriately",
+        "Alt text is present on all images"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Update destination images to be country-specific and contextually accurate (e.g., no desert safari images for European destinations)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-previous-requirements"
+        ],
+        "quotes": [
+          "Make the Images of packages as per the Country, For example you cant put Desert safari pic in Europe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each destination uses images that accurately represent that specific country or region",
+        "Dubai/UAE destinations show desert, skyline, and Middle Eastern imagery",
+        "European destinations show European architecture, landscapes, and cultural sites",
+        "Asian destinations show appropriate regional imagery",
+        "All destination images are visually distinct and geographically accurate"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Convert all pricing display from USD to INR currency format throughout the website",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-previous-requirements"
+        ],
+        "quotes": [
+          "Also the rates mentioned should be In INR"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All package prices display in INR with ₹ symbol",
+        "Number formatting follows Indian numbering system (lakhs, thousands)",
+        "Price ranges and estimates show INR currency",
+        "No USD or other currency symbols appear in pricing"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Update the complete company name to 'Leisureflies Travels Pvt Ltd' (or 'LEISUREFLIES TRAVELS PRIVATE LIMITED' where formal) across all branding touchpoints",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-previous-requirements"
+        ],
+        "quotes": [
+          "The Complete name of the company is Leisureflies Travels Pvt Ltd!!!"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer displays 'Leisureflies Travels Pvt Ltd' or full legal name",
+        "About page uses complete formal company name",
+        "Page titles and meta tags reflect full company name",
+        "All branding elements use correct company name format"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add comprehensive contact details including corporate office (Chandigarh), branch office (Panchkula), departmental phone numbers, and email addresses to the Contact page",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-previous-requirements"
+        ],
+        "quotes": [
+          "Contact details are as below"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Corporate office address: SCO 70, Second Floor, Sector 38-C, Chandigarh with all phone numbers displayed",
+        "Branch office address: SCO 15, Second Floor, Sector 10, Panchkula 134109 with branch numbers",
+        "Departmental contacts section showing Air Ticketing, Holiday Packages, Visa Consultation, Branch Manager, Domestic Hotels, and Accounts numbers",
+        "Email (info@leisureflies.com) and website (www.leisureflies.com) are prominently displayed",
+        "Contact information is formatted clearly and grouped by location/department"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Update the About Us page with the complete company profile including full service description, client focus, strengths, IATA/TAAI certifications, founding story (2010, Mr. Kamal Rana), and milestone of 53,000+ travelers served",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-previous-requirements"
+        ],
+        "quotes": [
+          "Brief abboput company is",
+          "About Us – Leisureflies Travels Pvt. Ltd."
+        ]
+      },
+      "acceptanceCriteria": [
+        "About page includes the full company description as a comprehensive travel management company",
+        "Mentions IATA-accredited and TAAI-certified status",
+        "Includes founding information: established 2010 by Mr. Kamal Rana",
+        "Displays 53,000+ travelers served milestone",
+        "Describes service offerings: Luxury Holidays, Air Tickets, Hotels, Bus Service, Visa Consultation",
+        "Emphasizes client-focused approach and trust-based business partnerships",
+        "Notes presence in both Chandigarh (HQ) and Panchkula"
+      ]
+    }
+  ],
+  "constraints": [
+    "Maintain single-actor Motoko backend architecture",
+    "Do not modify immutable frontend paths: useInternetIdentity hooks, useActor.ts, main.tsx, or components/ui directory",
+    "Keep all existing inquiry submission and admin functionality intact",
+    "Preserve React + TypeScript + Tailwind + React Query stack"
+  ],
+  "nonGoals": [
+    "Integrating third-party chat services (Intercom, Zendesk, etc.)",
+    "Real-time WebSocket chat functionality",
+    "Adding payment processing or booking systems",
+    "Implementing user accounts beyond Internet Identity admin access",
+    "Creating mobile app versions"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Dubai skyline with Burj Khalifa at sunset for UAE destination card (dubai-skyline.dim_800x600.png)",
+      "Desert safari with sand dunes and 4x4 vehicles for UAE packages (dubai-desert-safari.dim_800x600.png)",
+      "Santorini white buildings with blue domes overlooking Aegean Sea for Greece destination (greece-santorini.dim_800x600.png)",
+      "Athens Acropolis and Parthenon temple for Greece packages (greece-acropolis.dim_800x600.png)",
+      "Paris Eiffel Tower with Seine river for France destination card (france-eiffel.dim_800x600.png)",
+      "Swiss Alps mountain landscape with snow peaks and green valleys for Switzerland destination (switzerland-alps.dim_800x600.png)",
+      "Maldives overwater bungalows with turquoise lagoon for beach destination (maldives-resort.dim_800x600.png)",
+      "Thailand temples and Buddhist architecture for Southeast Asia packages (thailand-temple.dim_800x600.png)"
+    ],
+    "edits": []
+  }
+}

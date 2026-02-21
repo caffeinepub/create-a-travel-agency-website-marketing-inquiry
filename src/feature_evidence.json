@@ -1,0 +1,150 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-live-chat-widget-or-chat-tab-that-allows-visitors-to-initiate-customer-communication-directly-from-the-website",
+      "featureTitle": "Add a live chat widget or chat tab that allows visitors to initiate customer communication directly from the website",
+      "files": [
+        "frontend/src/components/chat/ChatWidget.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/hooks/useChatState.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-seo-optimization-for-the-lead-generation-website-including-meta-tags-structured-data-open-graph-tags-and-semantic-html",
+      "featureTitle": "Implement SEO optimization for the lead generation website including meta tags, structured data, Open Graph tags, and semantic HTML",
+      "files": [
+        "frontend/src/components/seo/SEOHead.tsx",
+        "frontend/src/components/seo/StructuredData.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/DestinationsPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PackagesPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-destination-images-to-be-country-specific-and-contextually-accurate-e-g-no-desert-safari-images-for-european-destinations",
+      "featureTitle": "Update destination images to be country-specific and contextually accurate (e.g., no desert safari images for European destinations)",
+      "files": [
+        "frontend/src/data/destinations.ts",
+        "frontend/src/data/packages.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-convert-all-pricing-display-from-usd-to-inr-currency-format-throughout-the-website",
+      "featureTitle": "Convert all pricing display from USD to INR currency format throughout the website",
+      "files": [
+        "frontend/src/data/destinations.ts",
+        "frontend/src/data/packages.ts",
+        "frontend/src/pages/DestinationsPage.tsx",
+        "frontend/src/pages/PackagesPage.tsx",
+        "frontend/src/utils/currency.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-complete-company-name-to-leisureflies-travels-pvt-ltd-or-leisureflies-travels-private-limited-where-formal-across-all-branding-touchpoints",
+      "featureTitle": "Update the complete company name to 'Leisureflies Travels Pvt Ltd' (or 'LEISUREFLIES TRAVELS PRIVATE LIMITED' where formal) across all branding touchpoints",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/components/seo/SEOHead.tsx",
+        "frontend/src/pages/AboutPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-comprehensive-contact-details-including-corporate-office-chandigarh-branch-office-panchkula-departmental-phone-numbers-and-email-addresses-to-the-contact-page",
+      "featureTitle": "Add comprehensive contact details including corporate office (Chandigarh), branch office (Panchkula), departmental phone numbers, and email addresses to the Contact page",
+      "files": [
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/data/contact.ts",
+        "frontend/src/pages/ContactPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-about-us-page-with-the-complete-company-profile-including-full-service-description-client-focus-strengths-iata-taai-certifications-founding-story-2010-mr-kamal-rana-and-milestone-of-53-000-travelers-served",
+      "featureTitle": "Update the About Us page with the complete company profile including full service description, client focus, strengths, IATA/TAAI certifications, founding story (2010, Mr. Kamal Rana), and milestone of 53,000+ travelers served",
+      "files": [
+        "frontend/src/data/company.ts",
+        "frontend/src/pages/AboutPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

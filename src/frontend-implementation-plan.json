@@ -1,0 +1,232 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Leisureflies Travels Website Frontend Enhancement",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add live chat widget accessible from all pages with persistent state and messaging capability",
+      "acceptanceCriteria": [
+        "A visible chat button or tab appears on all pages",
+        "Users can open the chat interface to send messages",
+        "Chat interface includes input field and send functionality",
+        "Chat state persists across page navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/chat/ChatWidget.tsx",
+          "operation": "create",
+          "description": "Create a chat widget component with floating button, expandable chat panel, message input field, send functionality, and local state management for open/closed state and message history"
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Import and render ChatWidget component at the bottom of the layout so it appears on all pages with floating position"
+        },
+        {
+          "path": "frontend/src/hooks/useChatState.ts",
+          "operation": "create",
+          "description": "Create a custom hook to manage chat open/closed state and message list using React state, persisting chat messages in sessionStorage to maintain state across page navigation"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement comprehensive SEO optimization with meta tags, structured data, Open Graph tags, and semantic HTML",
+      "acceptanceCriteria": [
+        "All pages include proper meta title and description tags",
+        "Open Graph and Twitter Card meta tags are present",
+        "Structured data (JSON-LD) for Organization and LocalBusiness is included",
+        "Semantic HTML5 elements are used appropriately",
+        "Alt text is present on all images"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/seo/SEOHead.tsx",
+          "operation": "create",
+          "description": "Create a reusable SEO component that accepts title, description, and page-specific metadata props and renders meta tags, Open Graph tags, Twitter Card tags, and canonical URLs using react-helmet-async"
+        },
+        {
+          "path": "frontend/src/components/seo/StructuredData.tsx",
+          "operation": "create",
+          "description": "Create component that renders JSON-LD structured data for Organization and LocalBusiness schemas including company name, addresses, contact details, and services"
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Wrap the app with HelmetProvider from react-helmet-async to enable SEO meta tag management"
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead component with homepage-specific title and description, add StructuredData component, and ensure semantic HTML5 elements (header, main, section, article) are used appropriately"
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead component with About page metadata and ensure semantic HTML5 structure with proper heading hierarchy"
+        },
+        {
+          "path": "frontend/src/pages/DestinationsPage.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead component with destinations-focused metadata, ensure all destination images have descriptive alt text, and use semantic article/section elements for destination cards"
+        },
+        {
+          "path": "frontend/src/pages/PackagesPage.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead component with packages-focused metadata, ensure all package images have alt text, and use semantic HTML5 elements"
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead component with contact page metadata emphasizing local business contact information"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Update destination images to be country-specific and geographically accurate using generated assets",
+      "acceptanceCriteria": [
+        "Each destination uses images that accurately represent that specific country or region",
+        "Dubai/UAE destinations show desert, skyline, and Middle Eastern imagery",
+        "European destinations show European architecture, landscapes, and cultural sites",
+        "Asian destinations show appropriate regional imagery",
+        "All destination images are visually distinct and geographically accurate"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/destinations.ts",
+          "operation": "modify",
+          "description": "Update destination image paths to use generated assets: Dubai uses frontend/public/assets/generated/dubai-skyline.dim_800x600.png and frontend/public/assets/generated/dubai-desert-safari.dim_800x600.png, Greece uses frontend/public/assets/generated/greece-santorini.dim_800x600.png and frontend/public/assets/generated/greece-acropolis.dim_800x600.png, France uses frontend/public/assets/generated/france-eiffel.dim_800x600.png, Switzerland uses frontend/public/assets/generated/switzerland-alps.dim_800x600.png, Maldives uses frontend/public/assets/generated/maldives-resort.dim_800x600.png, Thailand uses frontend/public/assets/generated/thailand-temple.dim_800x600.png. Ensure each destination object references the correct country-specific image file."
+        },
+        {
+          "path": "frontend/src/data/packages.ts",
+          "operation": "modify",
+          "description": "Update package image references to use the country-specific generated image assets from frontend/public/assets/generated/, matching each package to its appropriate destination image (e.g., Dubai packages use dubai-skyline.dim_800x600.png or dubai-desert-safari.dim_800x600.png, Greece packages use greece images, etc.)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Convert all pricing display from USD to INR currency format with proper symbols and Indian numbering",
+      "acceptanceCriteria": [
+        "All package prices display in INR with ₹ symbol",
+        "Number formatting follows Indian numbering system (lakhs, thousands)",
+        "Price ranges and estimates show INR currency",
+        "No USD or other currency symbols appear in pricing"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/currency.ts",
+          "operation": "create",
+          "description": "Create utility functions to format numbers as INR currency with ₹ symbol and Indian numbering format (lakhs and thousands separators)"
+        },
+        {
+          "path": "frontend/src/data/destinations.ts",
+          "operation": "modify",
+          "description": "Convert all price values from USD to INR (multiply by approximate exchange rate ~83) and update price strings to use INR formatting with ₹ symbol"
+        },
+        {
+          "path": "frontend/src/data/packages.ts",
+          "operation": "modify",
+          "description": "Convert all package prices from USD to INR and update price display strings to use ₹ symbol and INR formatting"
+        },
+        {
+          "path": "frontend/src/pages/DestinationsPage.tsx",
+          "operation": "modify",
+          "description": "Import and use currency formatting utility to ensure destination prices display in INR format"
+        },
+        {
+          "path": "frontend/src/pages/PackagesPage.tsx",
+          "operation": "modify",
+          "description": "Import and use currency formatting utility to ensure package prices display in INR format"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Update company name to 'Leisureflies Travels Pvt Ltd' across all branding touchpoints",
+      "acceptanceCriteria": [
+        "Footer displays 'Leisureflies Travels Pvt Ltd' or full legal name",
+        "About page uses complete formal company name",
+        "Page titles and meta tags reflect full company name",
+        "All branding elements use correct company name format"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Update header branding and footer copyright text to display 'Leisureflies Travels Pvt Ltd' instead of shortened version"
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Update all references to company name to use full formal name 'LEISUREFLIES TRAVELS PRIVATE LIMITED' or 'Leisureflies Travels Pvt Ltd' as appropriate for context"
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update page title to include 'Leisureflies Travels Pvt Ltd' for consistent branding"
+        },
+        {
+          "path": "frontend/src/components/seo/SEOHead.tsx",
+          "operation": "modify",
+          "description": "Ensure default site name and title suffix use 'Leisureflies Travels Pvt Ltd' in meta tags and Open Graph tags"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add comprehensive contact details including both office locations, departmental phone numbers, and email addresses",
+      "acceptanceCriteria": [
+        "Corporate office address: SCO 70, Second Floor, Sector 38-C, Chandigarh with all phone numbers displayed",
+        "Branch office address: SCO 15, Second Floor, Sector 10, Panchkula 134109 with branch numbers",
+        "Departmental contacts section showing Air Ticketing, Holiday Packages, Visa Consultation, Branch Manager, Domestic Hotels, and Accounts numbers",
+        "Email (info@leisureflies.com) and website (www.leisureflies.com) are prominently displayed",
+        "Contact information is formatted clearly and grouped by location/department"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/contact.ts",
+          "operation": "create",
+          "description": "Create structured contact data object containing corporate office details (SCO 70, Second Floor, Sector 38-C, Chandigarh with phone numbers), branch office details (SCO 15, Second Floor, Sector 10, Panchkula 134109 with numbers), departmental contact numbers (Air Ticketing, Holiday Packages, Visa Consultation, Branch Manager, Domestic Hotels, Accounts), email (info@leisureflies.com), and website (www.leisureflies.com)"
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Import contact data and render comprehensive contact information sections grouped by corporate office, branch office, and departmental contacts with clear formatting and visual hierarchy above the inquiry form"
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Add contact email and phone number to footer section for quick access"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Update About page with complete company profile including service description, certifications, founding story, and milestones",
+      "acceptanceCriteria": [
+        "About page includes the full company description as a comprehensive travel management company",
+        "Mentions IATA-accredited and TAAI-certified status",
+        "Includes founding information: established 2010 by Mr. Kamal Rana",
+        "Displays 53,000+ travelers served milestone",
+        "Describes service offerings: Luxury Holidays, Air Tickets, Hotels, Bus Service, Visa Consultation",
+        "Emphasizes client-focused approach and trust-based business partnerships",
+        "Notes presence in both Chandigarh (HQ) and Panchkula"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/company.ts",
+          "operation": "create",
+          "description": "Create structured company profile data including full description, IATA and TAAI certifications, founding year (2010) and founder (Mr. Kamal Rana), milestone of 53,000+ travelers served, complete service offerings list, client-focused values, and office locations in Chandigarh and Panchkula"
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Import company profile data and restructure About page to include comprehensive company story section, certifications badges/section (IATA and TAAI), founding history with Mr. Kamal Rana, prominent display of 53,000+ travelers milestone, detailed service offerings section (Luxury Holidays, Air Tickets, Hotels, Bus Service, Visa Consultation), client-focused approach description, and office location information"
+        }
+      ]
+    }
+  ]
+}

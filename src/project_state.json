@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Leisureflies Travels Pvt Ltd luxury travel lead generation website with SEO optimization, country-specific destination images, INR pricing, company details, and chat functionality",
+  "architectural_notes": [
+    "Lead generation website structure for luxury travel company",
+    "SEO-optimized architecture required",
+    "Multi-location business (Chandigarh corp office + Panchkula branch)",
+    "IATA-accredited and TAAI-certified company (founded 2010, 53,000+ travelers served)"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "imageRequirements": "## Required Images\n- Dubai skyline with Burj Khalifa at sunset for UAE destination card (dubai-skyline.dim_800x600.png)\n- Desert safari with sand dunes and 4x4 vehicles for UAE packages (dubai-desert-safari.dim_800x600.png)\n- Santorini white buildings with blue domes overlooking Aegean Sea for Greece destination (greece-santorini.dim_800x600.png)\n- Athens Acropolis and Parthenon temple for Greece packages (greece-acropolis.dim_800x600.png)\n- Paris Eiffel Tower with Seine river for France destination card (france-eiffel.dim_800x600.png)\n- Swiss Alps mountain landscape with snow peaks and green valleys for Switzerland destination (switzerland-alps.dim_800x600.png)\n- Maldives overwater bungalows with turquoise lagoon for beach destination (maldives-resort.dim_800x600.png)\n- Thailand temples and Buddhist architecture for Southeast Asia packages (thailand-temple.dim_800x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-add-a-live-chat-widget-or-chat-tab-that-allows-visitors-to-initiate-customer-communication-directly-from-the-website",
+      "title": "Add a live chat widget or chat tab that allows visitors to initiate customer communication directly from the website",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-seo-optimization-for-the-lead-generation-website-including-meta-tags-structured-data-open-graph-tags-and-semantic-html",
+      "title": "Implement SEO optimization for the lead generation website including meta tags, structured data, Open Graph tags, and semantic HTML",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-destination-images-to-be-country-specific-and-contextually-accurate-e-g-no-desert-safari-images-for-european-destinations",
+      "title": "Update destination images to be country-specific and contextually accurate (e.g., no desert safari images for European destinations)",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-convert-all-pricing-display-from-usd-to-inr-currency-format-throughout-the-website",
+      "title": "Convert all pricing display from USD to INR currency format throughout the website",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-complete-company-name-to-leisureflies-travels-pvt-ltd-or-leisureflies-travels-private-limited-where-formal-across-all-branding-touchpoints",
+      "title": "Update the complete company name to 'Leisureflies Travels Pvt Ltd' (or 'LEISUREFLIES TRAVELS PRIVATE LIMITED' where formal) across all branding touchpoints",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-comprehensive-contact-details-including-corporate-office-chandigarh-branch-office-panchkula-departmental-phone-numbers-and-email-addresses-to-the-contact-page",
+      "title": "Add comprehensive contact details including corporate office (Chandigarh), branch office (Panchkula), departmental phone numbers, and email addresses to the Contact page",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-us-page-with-the-complete-company-profile-including-full-service-description-client-focus-strengths-iata-taai-certifications-founding-story-2010-mr-kamal-rana-and-milestone-of-53-000-travelers-served",
+      "title": "Update the About Us page with the complete company profile including full service description, client focus, strengths, IATA/TAAI certifications, founding story (2010, Mr. Kamal Rana), and milestone of 53,000+ travelers served",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "SEO optimization for lead generation website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Country-specific destination images (no desert safari pics for Europe, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Display rates in INR currency",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add complete company contact details (corp office, branch, departmental contacts)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add chat option/tab for customer communication",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Include full company profile and About Us section",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Leisureflies Travels Pvt Ltd",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
